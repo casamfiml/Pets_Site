@@ -1,18 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <div class="col-sm-4 text-center">
 
-<p id="notice"><%= notice %></p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <hr>
+        <p id="notice"><%= notice %></p>
+        <h2 class="intro-text text-center">
+          Titulo:
+          <strong>
+            <%= @post.titulo %>
+          </strong>
+        </h2>
+        <hr>
+      </div>
+      <div class="col-md-6">
+        <p>
+          <% if @post.has_photo? %>
+              <%= image_tag(@post.photo_path, {:class => "img-responsive img-border img-left"}) %>
+          <% else %>
+              <b>Problema al subir la foto</b>
+          <% end %>
+        </p>
+      </div>
+        <div class="col-sm-4">
+          <h3>
+          <%= link_to 'Editar', edit_post_path(@post) %> |
+          <%= link_to 'Regresar', posts_path %>
+          </h3>
+        </div>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @post.titulo %>
-</p>
-
-<p>
-  <% if @post.has_photo? %>
-      <%= image_tag(@post.photo_path, {:class => "img-responsive img-border img-left"}) %>
-      <% else %>
-        <b>Problema al subir la foto</b>
-    <% end %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
