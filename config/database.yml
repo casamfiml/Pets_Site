@@ -59,7 +59,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Pets_Site_test
+
+Host:	ec2-54-243-51-102.compute-1.amazonaws.com
+Database:	d1dl03nonojick
+User:	upmqzavwkcrqiy
+Port:	5432
+Password: ikoZaDyUazA17v-02aCqUzcsU0
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
